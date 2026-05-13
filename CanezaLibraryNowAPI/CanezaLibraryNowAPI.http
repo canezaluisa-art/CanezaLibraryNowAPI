@@ -1,0 +1,6 @@
+@CanezaLibraryNowAPI_HostAddress = http://localhost:5188
+
+GET {{CanezaLibraryNowAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
