@@ -6,10 +6,10 @@ ENV ASPNETCORE_URLS=http://+:8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet restore "CuarioLibraryNowAPI/CuarioLibraryNowAPI.csproj"
-RUN dotnet publish "CuarioLibraryNowAPI/CuarioLibraryNowAPI.csproj" -c Release -o /app/out
+RUN dotnet restore "CanezaLibraryNowAPI/CanezaLibraryNowAPI.csproj"
+RUN dotnet publish "CanezaLibraryNowAPI/CanezaLibraryNowAPI.csproj" -c Release -o /app/out
 
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/out .
-ENTRYPOINT ["dotnet", "CuarioLibraryNowAPI.dll"]
+ENTRYPOINT ["dotnet", "CanezaLibraryNowAPI.dll"]
